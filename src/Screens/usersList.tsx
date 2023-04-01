@@ -3,8 +3,26 @@ import Table from 'react-bootstrap/Table';
 import { getUsers } from '../Services/apiServices';
 import { useQuery } from 'react-query';
 
+type Users = {
+  id:number,
+  name:string,
+  username:string,
+  email:string,
+  street:string,
+  address:any,
+  suite:string,
+  city: string,
+  zipcode:number,
+  lat:any,
+  lng:any,
+
+}
 const Userlist = () => {
-  const {data,isLoading,} = useQuery({
+
+
+  const {data,isLoading,} = useQuery
+  <Users[]>
+  ({
     // queryKey:['users'],
     queryFn:getUsers
 
@@ -39,7 +57,7 @@ const Userlist = () => {
       </tr>
     </thead>
     <tbody>
-        {data?.map((item:any,index:number) =>{
+        {data?.map((item,index:number) =>{
           return(
             <tr key= {index} >
             
